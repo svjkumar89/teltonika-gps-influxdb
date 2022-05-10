@@ -23,7 +23,6 @@ services:
       - TIMEZONE=Europe/Helsinki
       - LISTEN_PORT=12050
       - ALLOWED_DEVICES=12345678901234 23456789012345 345678901234567
-      - INFLUXDB_SOURCENAME=sourcename
       - DB_SCHEME=https+influxdb
       - DB_HOST=influxdb.example.com
       - DB_PORT=443

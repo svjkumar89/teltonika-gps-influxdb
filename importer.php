@@ -18,7 +18,6 @@ $dbname = getenv('DB_NAME');
 $dbuser = getenv('DB_USER');
 $dbpass = getenv('DB_PASS');
 $timezone = getenv('TIMEZONE');
-$sourceName = getenv('INFLUXDB_SOURCENAME');
 
 // Make a database connection
 $database = InfluxDB\Client::fromDSN(sprintf('%s://%s:%s@%s:%s/%s', $dbscheme, $dbuser, $dbpass, $dbhost, $dbport, $dbname));
@@ -88,7 +87,7 @@ if (!$socket) {
       $points[] = new InfluxDB\Point(
         'gps_points',
         null,
-        [ 'source' => $sourceName ],
+        [ 'source' => $imei ],
         [ 'lat' => $gps->getLatitude(), 'lon' => $gps->getLongitude(), 'speed' => $gps->getSpeed() ],
         $timestamp
       );
