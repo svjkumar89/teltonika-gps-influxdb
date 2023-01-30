@@ -73,7 +73,7 @@ if (!$socket) {
     for ( $i = 0; $i < $num; $i++ ) {
       print( "Processing object number: $i\n" );
       $gps = $packet->getAvlDataCollection()->getAvlData()[$i]->getGpsElement();
-      // print_r( $packet->getAvlDataCollection()->getAvlData()[$i] );
+      print_r( $packet->getAvlDataCollection()->getAvlData()[$i] );
       // print_r( $packet->getAvlDataCollection()->getAvlData()[$i]->getGpsElement() );
       $timestamp = round( $packet->getAvlDataCollection()->getAvlData()[$i]->getTimestamp() / 1000 );
       print( "Timestamp: " . $timestamp . "\n" );
